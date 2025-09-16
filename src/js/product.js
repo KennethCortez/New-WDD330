@@ -2,11 +2,11 @@ import { setLocalStorage, getParam } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 
 const dataSource = new ProductData("tents");
-const productId = getParam('product');
+const productId = getParam("product");
 
 
 function addProductToCart(product) {
-  const cartItems = getLocalStorage("so-cart") || []; // get cart array of items from local storage if null set to empty array
+  const cartItems = setLocalStorage("so-cart") || []; // get cart array of items from local storage if null set to empty array
   cartItems.push(product);
   setLocalStorage("so-cart", cartItems);
 }

@@ -14,7 +14,5 @@ const productList = new ProductList("tents", dataSource, listElement);
 
 productList.init(productId);
 
-loadHeaderFooter().then(() => {
-    console.log("Header and Footer loaded");
-});
+loadHeaderFooter()
 

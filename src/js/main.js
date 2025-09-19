@@ -14,5 +14,5 @@ const productList = new ProductList("tents", dataSource, listElement);
 
 productList.init(productId);
 
-loadHeaderFooter()
+loadHeaderFooter();
 

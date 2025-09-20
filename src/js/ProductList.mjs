@@ -1,13 +1,16 @@
 function productCardTemplate(product) {
 return `
-    <li class="product-card">
-        <a href="/product_pages/?product=${product.Id}">
-        <img src="${product.Images.PrimaryMedium}" alt="${product.Name}">
-        <h3>${product.Brand.Name}</h3>
-        <p>${product.NameWithoutBrand}</p>
-        <p class="product-card__price">$${product.FinalPrice}</p>
-        </a>
-    </li>
+    <section class="product-detail">
+    <h3>${product.Brand.Name}</h3>
+    <h2 class="divider">${product.NameWithoutBrand}</h2>
+    <img class="divider" src="${product.Image}" alt="${product.NameWithoutBrand}" />
+    <p class="product-card__price">$${product.FinalPrice}</p>
+    <p class="product__color">${product.Colors[0]?.ColorName || ""}</p>
+    <p class="product__description">${product.DescriptionHtmlSimple}</p>
+    <div class="product-detail__add">
+        <button id="addToCart" data-id="${product.Id}">Add to Cart</button>
+    </div>
+    </section>
 `;
 }
 

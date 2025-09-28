@@ -6,7 +6,35 @@ function renderCartContents() {
 
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+  renderCartTotal();
 }
+
+function renderCartTotal() {
+  const cartItems = getLocalStorage("so-cart") || [];
+  const cartTotalDiv = document.querySelector(".cart-total-delete");
+  const totalElement = document.querySelector(".cart-total");
+
+  if (cartItems.length === 0) {
+  
+    cartTotalDiv.style.display = "none";
+    return;
+  }
+
+  
+  const total = cartItems.reduce((sum, item) => {
+    const quantity = item.quantity || 1;
+    return sum + item.FinalPrice * quantity;
+  }, 0);
+
+  
+  totalElement.textContent = `Total: $${total.toFixed(2)}`;
+
+  // Make sure the total is visible and centered
+  cartTotalDiv.style.display = "block"
+  cartTotalDiv.style.textAlign = "center";
+}
+
 
 function cartItemTemplate(item) {
   return `<li class="cart-card divider" data-id="${item.Id}">

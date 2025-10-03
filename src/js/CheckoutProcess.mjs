@@ -1,3 +1,18 @@
+
+
+function packageItems(items){
+    const simpleItems = items.map(item => {
+        console.log(item);
+        return {
+            id: item.Id,
+            price: item.FinalPrice,
+            name: item.Name,
+            quantity: item.quantity || 1,
+        };
+    });
+    return simpleItems;
+}
+
 export default class CheckoutProcess {
     constructor(key, outputSelector) {
         this.key = key;

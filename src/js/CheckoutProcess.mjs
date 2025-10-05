@@ -32,7 +32,7 @@ export default class CheckoutProcess {
     calculateItemSummary() {
         // calculate and display the total amount of the items in the cart, and the number of items.
         const summaryElement = document.querySelector(
-        this.outputSelector + " #cartsubtotal"
+        this.outputSelector + " #ordersubtotal"
         );
         // calculate the total of all the items in the cart
         const amounts = this.list.map((item) => item.FinalPrice);

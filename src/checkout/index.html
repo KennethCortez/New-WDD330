@@ -21,14 +21,7 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
-      <section class="order-summary">
-        <h3>Order Summary</h3>
-        <div class="ordersubtotal" id="ordersubtotal"></div>
-        <div class="ordertax" id="ordertax"></div>
-        <div class="shippingEstimate" id="shippingEstimate"></div>
-        <div class="ordergrandtotal" id="ordergrandtotal"></div>
 
-      </section>
       <section class="checkout-form" id="checkout-form">
       <form name="checkout">
         <label for="name">Name</label>
@@ -52,6 +45,24 @@
         <input type="text" id="expirationDate" name="expirationDate" required />
         <label for="securityCode">Security Code</label>
         <input type="text" id="securityCode" name="securityCode" required />
+
+        <fieldset class="checkout-summary">
+          <legend>Order Summary</legend>
+
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div>Items</div>
+            <div id="num-items"></div>
+            <div>Subtotal</div>
+            <div id="ordersubtotal"></div>
+            <div>Tax</div>
+            <div id="ordertax"></div>
+            <div>Shipping</div>
+            <div id="shippingEstimate"></div>
+            <div>Total</div>
+            <div id="ordergrandtotal"></div>
+          </div>
+        </fieldset>
 
         <button type="submit" id="checkout">Checkout</button>
       </form>
